@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63342938401101732}
   m_Layer: 0
-  m_Name: BigMountain
+  m_Name: BigMountainSnow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

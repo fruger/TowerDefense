@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
         XPosition += Input.GetAxis("Horizontal") * MoveSpeed * Time.deltaTime * -1;
         ZPosition += Input.GetAxis("Vertical") * MoveSpeed * Time.deltaTime * -1;
 
-        XPosition = Mathf.Clamp(XPosition, MinX, MaxX);
+        // XPosition = Mathf.Clamp(XPosition, MinX, MaxX);
 
         CameraSlot.position = new Vector3(XPosition, CameraSlot.position.y, ZPosition);
     }
