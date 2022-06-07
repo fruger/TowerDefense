@@ -43,9 +43,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void DestroySpawnedEnemies()
     {
-        foreach (Enemy item in EnemySpawnedCollection)
+        foreach (Enemy enemy in EnemySpawnedCollection)
         {
-            Destroy(EnemyPrefab.gameObject);
+            Destroy(enemy.gameObject);
         }
 
         EnemySpawnedCollection.Clear();
