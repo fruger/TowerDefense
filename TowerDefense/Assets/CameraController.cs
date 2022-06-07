@@ -13,10 +13,6 @@ public class CameraController : MonoBehaviour
     private float XPosition { get; set; }
     private float ZPosition { get; set; }
 
-    private int MinX { get; set; }
-
-    private int MaxX { get; set; }
-
     protected virtual void Awake()
     {
         Initialize();
