@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     private Transform SpawnPoint { get; set; }
 
     [field: SerializeField]
-    private Enemy EnemyPrefab { get; set; }
+    private List<Enemy> EnemyPrefabCollection { get; set; } = new List<Enemy>();
 
     [field: SerializeField]
     private Transform EndPoint { get; set; }
@@ -35,7 +35,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        Enemy spawnedEnemy = Instantiate(EnemyPrefab, SpawnPoint.position, SpawnPoint.rotation, SpawnPoint);
+        int prefabIndex = Random.Range(0, EnemyPrefabCollection.Count);
+        Enemy spawnedEnemy = Instantiate(EnemyPrefabCollection[prefabIndex], SpawnPoint.position, SpawnPoint.rotation, SpawnPoint);
         spawnedEnemy.Initialize(EndPoint.position);
 
         EnemySpawnedCollection.Add(spawnedEnemy);

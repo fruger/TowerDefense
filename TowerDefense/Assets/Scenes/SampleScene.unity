@@ -9410,7 +9410,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <SpawnPoint>k__BackingField: {fileID: 605784903}
-  <EnemyPrefab>k__BackingField: {fileID: 8352078423490140962, guid: 5fdaf4381e4bdd84786d4a8a101da166, type: 3}
+  <EnemyPrefabCollection>k__BackingField:
+  - {fileID: 8352078423490140962, guid: 5fdaf4381e4bdd84786d4a8a101da166, type: 3}
+  - {fileID: 2835793827639090780, guid: 8d9c6e2498dcaea4ba268354bcc2016a, type: 3}
   <EndPoint>k__BackingField: {fileID: 1260574034}
 --- !u!1 &616973031
 GameObject:
@@ -18021,7 +18023,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <SpawnPoint>k__BackingField: {fileID: 1151296015}
-  <EnemyPrefab>k__BackingField: {fileID: 2835793827639090780, guid: 8d9c6e2498dcaea4ba268354bcc2016a, type: 3}
+  <EnemyPrefabCollection>k__BackingField:
+  - {fileID: 8352078423490140962, guid: 5fdaf4381e4bdd84786d4a8a101da166, type: 3}
+  - {fileID: 2835793827639090780, guid: 8d9c6e2498dcaea4ba268354bcc2016a, type: 3}
   <EndPoint>k__BackingField: {fileID: 1260574034}
 --- !u!4 &1151296015
 Transform:
