@@ -1,17 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [field: Space, Header("Navigation Points References")]
     [field: SerializeField]
     private Transform SpawnPoint { get; set; }
 
     [field: SerializeField]
-    private List<Enemy> EnemyPrefabCollection { get; set; } = new List<Enemy>();
-
-    [field: SerializeField]
     private Transform EndPoint { get; set; }
+
+    [field: Space, Header("Enemy Prefabs")]
+    [field: SerializeField]
+    private List<Enemy> EnemyPrefabCollection { get; set; } = new List<Enemy>();
 
     private List<Enemy> EnemySpawnedCollection { get; set; } = new List<Enemy>();
 
