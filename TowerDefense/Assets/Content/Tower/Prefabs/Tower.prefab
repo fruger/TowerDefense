@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3901519661238514082}
   - component: {fileID: 1166026634018827777}
   - component: {fileID: 8666583136268278142}
+  - component: {fileID: 5070277849724088129}
   m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MonoBehaviour:
   <MaxRaycastDistance>k__BackingField: 2000
   <BuildGroundLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!136 &1166026634018827777
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -92,6 +93,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5070277849724088129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742682607621552625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35548e805453b0c429621cfcd3da3ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TowerPrefab>k__BackingField: {fileID: 3901519661238514082}
+  <createTower>k__BackingField: 116
 --- !u!1001 &814745348228092760
 PrefabInstance:
   m_ObjectHideFlags: 0
