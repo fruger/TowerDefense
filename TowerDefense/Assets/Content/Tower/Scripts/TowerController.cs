@@ -13,6 +13,7 @@ public class TowerController : MonoBehaviour
     [field: SerializeField]
     private LayerMask BuildGroundLayerMask { get; set; }
     private bool IsOnBuildGround { get;  set; }
+    private bool IsColliding { get;  set; }
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class TowerController : MonoBehaviour
     private void Update()
     {
         TowerPosition();
+        CheckIfCanBePlaced();
     }
 
     private void TowerPosition()
@@ -39,7 +41,17 @@ public class TowerController : MonoBehaviour
 
     public bool CheckIfCanBePlaced()
     {
-        return IsOnBuildGround == true;
+        return IsOnBuildGround == true && IsColliding == false;
     }
-    
+
+    private void OnTriggerStay(Collider other)
+    {
+        IsColliding = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        IsColliding = false;
+    }
+
 }

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8867175978099978993}
   - component: {fileID: 3901519661238514082}
+  - component: {fileID: 1166026634018827777}
   - component: {fileID: 8666583136268278142}
-  - component: {fileID: 8666583136268278143}
   m_Layer: 7
   m_Name: Tower
   m_TagString: Untagged
@@ -59,6 +59,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   <MaxRaycastDistance>k__BackingField: 2000
+  <BuildGroundLayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!136 &1166026634018827777
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5742682607621552625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8666583136268278142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,19 +92,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &8666583136268278143
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5742682607621552625}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &814745348228092760
 PrefabInstance:
   m_ObjectHideFlags: 0
