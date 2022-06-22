@@ -1,28 +1,27 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
-    private static TowerManager _instance;
+    private TowerController CurrentTower { get; set; }
 
-    public static TowerManager Instance
+    private List<TowerController> TowerPrefabCollection { get; set; } = new List<TowerController>();
+
+    public static TowerManager Instance { get; private set; }
+
+    private void Initialize()
     {
-        get
+        if (Instance != null)
         {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<TowerManager>();
-                if (_instance == null)
-                {
-                    _instance = new GameObject().AddComponent<TowerManager>();
-                }
-            }
-
-            return _instance;
+            Destroy(gameObject);
+            return;
         }
+        Instance = this;
     }
 
-    private void Awake()
+    public void TrySpawnTowerPrefab(TowerController towerPrefab)
     {
-        _instance = this;
+        CurrentTower = Instantiate(towerPrefab);
+        TowerPrefabCollection.Add(CurrentTower);
     }
 }
