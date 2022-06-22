@@ -2,26 +2,27 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
-    [field: SerializeField]
-    private TowerController TowerPrefab { get; set; }
+    private static TowerManager _instance;
 
-    private TowerController CurrentTower { get; set; }
-
-    [field: SerializeField]
-    private KeyCode createTower { get; set; } = KeyCode.T;
-
-    void Update()
+    public static TowerManager Instance
     {
-        if (Input.GetKeyDown(createTower) == true)
+        get
         {
-            SpawnTower();
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<TowerManager>();
+                if (_instance == null)
+                {
+                    _instance = new GameObject().AddComponent<TowerManager>();
+                }
+            }
+
+            return _instance;
         }
     }
 
-    public void SpawnTower()
+    private void Awake()
     {
-        CurrentTower = Instantiate(TowerPrefab);
+        _instance = this;
     }
-
-
 }
