@@ -6,14 +6,14 @@ public class TowerController : MonoBehaviour
     private LayerMask FloorLayerMask { get; set; }
 
     [field: SerializeField]
-    private float MaxRaycastDistance { get;  set; }
-   
+    private float MaxRaycastDistance { get; set; }
+
     private Camera MainCamera { get; set; }
 
     [field: SerializeField]
     private LayerMask BuildGroundLayerMask { get; set; }
-    private bool IsOnBuildGround { get;  set; }
-    private bool IsColliding { get;  set; }
+    private bool IsOnBuildGround { get; set; }
+    private bool IsColliding { get; set; }
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class TowerController : MonoBehaviour
         }
 
         IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
-        Debug.Log(IsOnBuildGround == true ? "Can be placed" : "CannotBePlaced");
+        Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
     }
 
     public bool CheckIfCanBePlaced()
