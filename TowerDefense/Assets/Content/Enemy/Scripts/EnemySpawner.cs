@@ -1,55 +1,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+namespace TowerDefense
 {
-    [field: Space, Header("Navigation Points References")]
-    [field: SerializeField]
-    private Transform SpawnPoint { get; set; }
-
-    [field: SerializeField]
-    private Transform EndPoint { get; set; }
-
-    [field: Space, Header("Enemy Prefabs")]
-    [field: SerializeField]
-    private List<Enemy> EnemyPrefabCollection { get; set; } = new List<Enemy>();
-
-    private List<Enemy> EnemySpawnedCollection { get; set; } = new List<Enemy>();
-
-    protected virtual void Start()
+    public class EnemySpawner : MonoBehaviour
     {
-        SpawnEnemy();
-    }
+        [field: Space, Header("Navigation Points References")]
+        [field: SerializeField]
+        private Transform SpawnPoint { get; set; }
 
-    protected virtual void Update()
-    {
-        if (Input.GetKey(KeyCode.K) == true)
+        [field: SerializeField]
+        private Transform EndPoint { get; set; }
+
+        [field: Space, Header("Enemy Prefabs")]
+        [field: SerializeField]
+        private List<Enemy> EnemyPrefabCollection { get; set; } = new List<Enemy>();
+
+        private List<Enemy> EnemySpawnedCollection { get; set; } = new List<Enemy>();
+
+        protected virtual void Start()
         {
             SpawnEnemy();
         }
 
-        if (Input.GetKey(KeyCode.L) == true)
+        protected virtual void Update()
         {
-            DestroySpawnedEnemies();
-        }
-    }
+            if (Input.GetKey(KeyCode.K) == true)
+            {
+                SpawnEnemy();
+            }
 
-    private void SpawnEnemy()
-    {
-        int prefabIndex = Random.Range(0, EnemyPrefabCollection.Count);
-        Enemy spawnedEnemy = Instantiate(EnemyPrefabCollection[prefabIndex], SpawnPoint.position, SpawnPoint.rotation, SpawnPoint);
-        spawnedEnemy.Initialize(EndPoint.position);
-
-        EnemySpawnedCollection.Add(spawnedEnemy);
-    }
-
-    private void DestroySpawnedEnemies()
-    {
-        foreach (Enemy enemy in EnemySpawnedCollection)
-        {
-            Destroy(enemy.gameObject);
+            if (Input.GetKey(KeyCode.L) == true)
+            {
+                DestroySpawnedEnemies();
+            }
         }
 
-        EnemySpawnedCollection.Clear();
+        private void SpawnEnemy()
+        {
+            int prefabIndex = Random.Range(0, EnemyPrefabCollection.Count);
+            Enemy spawnedEnemy = Instantiate(EnemyPrefabCollection[prefabIndex], SpawnPoint.position, SpawnPoint.rotation, SpawnPoint);
+            spawnedEnemy.Initialize(EndPoint.position);
+
+            EnemySpawnedCollection.Add(spawnedEnemy);
+        }
+
+        private void DestroySpawnedEnemies()
+        {
+            foreach (Enemy enemy in EnemySpawnedCollection)
+            {
+                Destroy(enemy.gameObject);
+            }
+
+            EnemySpawnedCollection.Clear();
+        }
     }
 }
