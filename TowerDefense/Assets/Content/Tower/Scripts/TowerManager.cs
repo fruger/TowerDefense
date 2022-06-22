@@ -9,7 +9,7 @@ public class TowerManager : MonoBehaviour
 
     [field: SerializeField]
     private KeyCode createTower { get; set; } = KeyCode.T;
-    
+
     void Update()
     {
         if (Input.GetKeyDown(createTower) == true)
