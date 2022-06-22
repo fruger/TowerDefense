@@ -916,6 +916,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4763127697371414019, guid: 52ff053c3f5e7a34d8410ec455a397a8, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 83306027ebc29a6429cf1518cee81c73, type: 2}
     - target: {fileID: 4763127698226327371, guid: 52ff053c3f5e7a34d8410ec455a397a8, type: 3}
       propertyPath: m_Name
       value: Environment
