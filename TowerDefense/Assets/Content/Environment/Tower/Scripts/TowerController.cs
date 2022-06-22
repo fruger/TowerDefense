@@ -1,56 +1,59 @@
 using UnityEngine;
 
-public class TowerController : MonoBehaviour
+namespace TowerDefense
 {
-    [field: SerializeField]
-    private LayerMask FloorLayerMask { get; set; }
-
-    [field: SerializeField]
-    private float MaxRaycastDistance { get; set; }
-
-    private Camera MainCamera { get; set; }
-
-    [field: SerializeField]
-    private LayerMask BuildGroundLayerMask { get; set; }
-    private bool IsOnBuildGround { get; set; }
-    private bool IsColliding { get; set; }
-
-    private void Awake()
+    public class TowerController : MonoBehaviour
     {
-        MainCamera = Camera.main;
-    }
+        [field: SerializeField]
+        private LayerMask FloorLayerMask { get; set; }
 
-    private void Update()
-    {
-        TowerPosition();
-        CheckIfCanBePlaced();
-    }
+        [field: SerializeField]
+        private float MaxRaycastDistance { get; set; }
 
-    private void TowerPosition()
-    {
-        Ray vRay = MainCamera.ScreenPointToRay(Input.mousePosition);
+        private Camera MainCamera { get; set; }
 
-        if (Physics.Raycast(vRay, out RaycastHit vHit, MaxRaycastDistance, FloorLayerMask) == true)
+        [field: SerializeField]
+        private LayerMask BuildGroundLayerMask { get; set; }
+        private bool IsOnBuildGround { get; set; }
+        private bool IsColliding { get; set; }
+
+        private void Awake()
         {
-            transform.position = new Vector3(vHit.point.x, 0.0f, vHit.point.z);
+            MainCamera = Camera.main;
         }
 
-        IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
-        Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
-    }
+        private void Update()
+        {
+            TowerPosition();
+            CheckIfCanBePlaced();
+        }
 
-    public bool CheckIfCanBePlaced()
-    {
-        return IsOnBuildGround == true && IsColliding == false;
-    }
+        private void TowerPosition()
+        {
+            Ray vRay = MainCamera.ScreenPointToRay(Input.mousePosition);
 
-    private void OnTriggerStay(Collider other)
-    {
-        IsColliding = true;
-    }
+            if (Physics.Raycast(vRay, out RaycastHit vHit, MaxRaycastDistance, FloorLayerMask) == true)
+            {
+                transform.position = new Vector3(vHit.point.x, 0.0f, vHit.point.z);
+            }
 
-    private void OnTriggerExit(Collider other)
-    {
-        IsColliding = false;
+            IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
+            Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
+        }
+
+        public bool CheckIfCanBePlaced()
+        {
+            return IsOnBuildGround == true && IsColliding == false;
+        }
+
+        private void OnTriggerStay(Collider other)
+        {
+            IsColliding = true;
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            IsColliding = false;
+        }
     }
 }
