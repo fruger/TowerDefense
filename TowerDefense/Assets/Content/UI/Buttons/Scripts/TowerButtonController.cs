@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class TowerButtonController : MonoBehaviour
+namespace TowerDefense
 {
-    [field: SerializeField]
-    private TowerController TowerPrefab { get; set; }
-
-    public void NotifyOnTowerButtonClicked()
+    public class TowerButtonController : MonoBehaviour
     {
-        TowerManager.Instance.TrySpawnTowerPrefab(TowerPrefab);
+        [field: SerializeField]
+        private TowerController TowerPrefab { get; set; }
+
+        public void NotifyOnTowerButtonClicked()
+        {
+            TowerManager.Instance.TrySpawnTowerPrefab(TowerPrefab);
+        }
     }
 }
