@@ -1,27 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerManager : MonoBehaviour
+namespace TowerDefense
 {
-    private TowerController CurrentTower { get; set; }
-
-    private List<TowerController> TowerPrefabCollection { get; set; } = new List<TowerController>();
-
-    public static TowerManager Instance { get; private set; }
-
-    private void Initialize()
+    public class TowerManager : MonoBehaviour
     {
-        if (Instance != null)
+        private TowerController CurrentTower { get; set; }
+
+        private List<TowerController> TowerPrefabCollection { get; set; } = new List<TowerController>();
+
+        public static TowerManager Instance { get; private set; }
+
+        private void Initialize()
         {
-            Destroy(gameObject);
-            return;
+            if (Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            Instance = this;
         }
-        Instance = this;
-    }
 
-    public void TrySpawnTowerPrefab(TowerController towerPrefab)
-    {
-        CurrentTower = Instantiate(towerPrefab);
-        TowerPrefabCollection.Add(CurrentTower);
+        public void TrySpawnTowerPrefab(TowerController towerPrefab)
+        {
+            CurrentTower = Instantiate(towerPrefab);
+            TowerPrefabCollection.Add(CurrentTower);
+        }
     }
 }
