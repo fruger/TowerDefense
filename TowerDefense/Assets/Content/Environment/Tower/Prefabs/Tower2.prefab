@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3277904445072791775}
   - component: {fileID: 826129913679972220}
   - component: {fileID: 7141702671761108995}
-  - component: {fileID: 6702676877057443388}
   m_Layer: 7
   m_Name: Tower2
   m_TagString: Untagged
@@ -90,20 +89,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6702676877057443388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6119147984790130828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35548e805453b0c429621cfcd3da3ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <TowerPrefab>k__BackingField: {fileID: 3277904445072791775}
-  <createTower>k__BackingField: 116
 --- !u!1001 &2508760953915110584
 PrefabInstance:
   m_ObjectHideFlags: 0
