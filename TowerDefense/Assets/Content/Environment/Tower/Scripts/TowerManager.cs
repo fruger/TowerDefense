@@ -11,7 +11,7 @@ namespace TowerDefense
 
         public static TowerManager Instance { get; private set; }
 
-        private void Initialize()
+        private void Awake()
         {
             if (Instance != null)
             {
