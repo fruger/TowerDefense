@@ -468,6 +468,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &874143682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 874143682, guid: 041f1935591aaf64e9e2406fe4357597, type: 3}
+  m_PrefabInstance: {fileID: 2000400145523544307}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35548e805453b0c429621cfcd3da3ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1018247672
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,13 +595,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1245606954}
-        m_TargetAssemblyTypeName: TowerDefense.TowerButtonController, Assembly-CSharp
-        m_MethodName: NotifyOnTowerButtonClicked
-        m_Mode: 1
+      - m_Target: {fileID: 874143682}
+        m_TargetAssemblyTypeName: TowerDefense.TowerManager, Assembly-CSharp
+        m_MethodName: TrySpawnTowerPrefab
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 3901519661238514082, guid: bcb8d0236136aa1459716103e763f60a, type: 3}
+          m_ObjectArgumentAssemblyTypeName: TowerDefense.TowerController, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -820,10 +831,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2000400144508220158, guid: 041f1935591aaf64e9e2406fe4357597, type: 3}
-      propertyPath: m_Name
-      value: EnemySpawnerCave
-      objectReference: {fileID: 0}
     - target: {fileID: 2000400144724984986, guid: 041f1935591aaf64e9e2406fe4357597, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -871,10 +878,6 @@ PrefabInstance:
     - target: {fileID: 2000400144724984987, guid: 041f1935591aaf64e9e2406fe4357597, type: 3}
       propertyPath: m_Name
       value: Gameplay
-      objectReference: {fileID: 0}
-    - target: {fileID: 2000400145053227957, guid: 041f1935591aaf64e9e2406fe4357597, type: 3}
-      propertyPath: m_Name
-      value: EnemySpawnerCamp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 041f1935591aaf64e9e2406fe4357597, type: 3}
