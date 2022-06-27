@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3277904445072791775}
   - component: {fileID: 826129913679972220}
   - component: {fileID: 7141702671761108995}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Tower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146884, guid: 59fda38c2143a264fb1ca61086abcc96, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 426282, guid: 59fda38c2143a264fb1ca61086abcc96, type: 3}
       propertyPath: m_RootOrder
@@ -260,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 112350, guid: a6904f5656dfe8e49bd1fae1497ddf07, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 422034, guid: a6904f5656dfe8e49bd1fae1497ddf07, type: 3}
       propertyPath: m_RootOrder
@@ -343,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 112246, guid: d43900a9d4c0e224eaf62e1d618dd64a, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 402170, guid: d43900a9d4c0e224eaf62e1d618dd64a, type: 3}
       propertyPath: m_RootOrder
@@ -497,11 +497,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 223220627147930881, guid: 9dcfcfc49eeeb814988807c850b2dfff, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 786574221053909638, guid: 9dcfcfc49eeeb814988807c850b2dfff, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1317308218929383737, guid: 9dcfcfc49eeeb814988807c850b2dfff, type: 3}
       propertyPath: m_Name
@@ -509,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1317308218929383737, guid: 9dcfcfc49eeeb814988807c850b2dfff, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5467534896378700134, guid: 9dcfcfc49eeeb814988807c850b2dfff, type: 3}
       propertyPath: m_RootOrder
