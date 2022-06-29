@@ -8472,7 +8472,19 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8137050656265676705, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8072719705565943016, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8137050656176155661, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8137205655904930802, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8137205655437709016, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8137205655733975646, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8136957023742364385, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8136962077969322390, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8137291328442866070, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8136989879683158380, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8136957024282737215, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
+    - {fileID: 8137205654548284894, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e6eadc06c73fe44a85eee199f147bb7, type: 3}
 --- !u!4 &2001477944005869395 stripped
 Transform:

@@ -6,7 +6,7 @@ namespace TowerDefense
 {
     public static class ExtensionMethods
     {
-        public static bool ChceckIfContainsLayer (this LayerMask source, int layer)
+        public static bool CheckIfContainsLayer (this LayerMask source, int layer)
         {
             return source == (source | 1 << layer);
         }

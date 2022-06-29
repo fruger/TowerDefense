@@ -47,6 +47,7 @@ namespace TowerDefense
         {
             foreach (Enemy enemy in EnemySpawnedCollection)
             {
+                Debug.Log("Castle reached");
                 Destroy(enemy.gameObject);
             }
 
