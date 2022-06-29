@@ -5,8 +5,11 @@ using TowerDefense;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class OnEnemyDestroyEvent : UnityEvent<Enemy>
+namespace TowerDefense
 {
-    
+    [Serializable]
+    public class OnEnemyDestroyEvent : UnityEvent<Enemy>
+    {
+
+    }
 }
