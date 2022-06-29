@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 namespace TowerDefense
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy : MonoBehaviour, IHitable
     {
         [field: SerializeField]
         private LayerMask CastleLayerMask { get; set; }
@@ -13,6 +13,9 @@ namespace TowerDefense
 
         [field:SerializeField]
         public OnEnemyDestroyEvent OnEnemyDestroy { get; private set; }
+
+        [field: SerializeField]
+        public int CurrentHealth { get; private set; }
 
         public void Initialize(Vector3 targetPosition)
         {
@@ -29,9 +32,20 @@ namespace TowerDefense
             }
         }
 
+        public void TakeDamage(int damage)
+        {
+            CurrentHealth -= damage;
+            if (CurrentHealth <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         private void OnDestroy()
         {
             OnEnemyDestroy.Invoke(this);
         }
+
+        
     }
 }
