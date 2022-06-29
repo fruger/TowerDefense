@@ -16,12 +16,14 @@ namespace TowerDefense
         [field: SerializeField]
         private LayerMask BuildGroundLayerMask { get; set; }
 
+        [field:SerializeField]
+        public TowerAttackData AttackData { get; set; }
+
         private Camera MainCamera { get; set; }
         private bool IsOnBuildGround { get; set; }
         private bool IsColliding { get; set; }
         public Collider[] CachedHits { get; set; }
         public float TimeSinceLastShot { get; private set; }
-        public TowerAttackData AttackData { get; private set; }
 
         private void Awake()
         {
