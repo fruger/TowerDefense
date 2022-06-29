@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="TowerAttackData", menuName = "ScriptableObjects/TowerAttackData")]
-public class TowerAttackData : MonoBehaviour
+public class TowerAttackData : ScriptableObject
 {
     [field:SerializeField]
     public LayerMask EnemyLayerMask { get; set; }
