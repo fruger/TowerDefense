@@ -54,11 +54,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FloorLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   <MaxRaycastDistance>k__BackingField: 2000
   <BuildGroundLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
 --- !u!136 &826129913679972220
 CapsuleCollider:
   m_ObjectHideFlags: 0
