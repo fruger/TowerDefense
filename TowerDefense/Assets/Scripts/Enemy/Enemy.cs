@@ -27,7 +27,7 @@ namespace TowerDefense
                 
             if (CastleLayerMask.CheckIfContainsLayer(other.gameObject.layer)==true)
             {
-                Debug.Log("Castle reached");
+                //GameManager.Instance.TakeDamage(Damage);
                 Destroy(gameObject);
             }
         }
