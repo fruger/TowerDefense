@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TowerDefense
@@ -23,8 +24,18 @@ namespace TowerDefense
 
         public void TrySpawnTowerPrefab(TowerController towerPrefab)
         {
+            IsCurrentTowerNull();
             CurrentTower = Instantiate(towerPrefab);
             TowerPrefabCollection.Add(CurrentTower);
+        }
+
+        private void IsCurrentTowerNull()
+        {
+            if (CurrentTower != null)
+            {
+                Destroy(TowerPrefabCollection.Last().gameObject);
+                TowerPrefabCollection.Remove(TowerPrefabCollection.Last());
+            }
         }
     }
 }
