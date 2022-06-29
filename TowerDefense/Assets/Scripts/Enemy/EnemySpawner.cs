@@ -37,17 +37,24 @@ namespace TowerDefense
         private void SpawnEnemy()
         {
             int prefabIndex = Random.Range(0, EnemyPrefabCollection.Count);
+
             Enemy spawnedEnemy = Instantiate(EnemyPrefabCollection[prefabIndex], SpawnPoint.position, SpawnPoint.rotation, SpawnPoint);
             spawnedEnemy.Initialize(EndPoint.position);
+            spawnedEnemy.OnEnemyDestroy.AddListener(UnregisteredEnemy);
 
             EnemySpawnedCollection.Add(spawnedEnemy);
+        }
+
+        private void UnregisteredEnemy(Enemy enemy)
+        {
+            EnemySpawnedCollection.Remove(enemy);
+            enemy.OnEnemyDestroy.RemoveListener(UnregisteredEnemy);
         }
 
         private void DestroySpawnedEnemies()
         {
             foreach (Enemy enemy in EnemySpawnedCollection)
             {
-                Debug.Log("Castle reached");
                 Destroy(enemy.gameObject);
             }
 
