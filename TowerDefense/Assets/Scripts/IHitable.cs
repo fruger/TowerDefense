@@ -6,6 +6,6 @@ namespace TowerDefense
 {
     public interface IHitable
     {
-        void TakeDamage();
+        void TakeDamage(int damage);
     }
 }
