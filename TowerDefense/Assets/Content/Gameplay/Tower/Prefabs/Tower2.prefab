@@ -52,13 +52,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c4e7f04543a034bbb68954be34f613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MaxRaycastDistance>k__BackingField: 2000
+  <EnemyLayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 0
   <FloorLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 128
-  <MaxRaycastDistance>k__BackingField: 2000
   <BuildGroundLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 128
+  <AttackData>k__BackingField: {fileID: 11400000, guid: ab0b0a40f1d619e4ebb1316e616ebdae, type: 2}
 --- !u!136 &826129913679972220
 CapsuleCollider:
   m_ObjectHideFlags: 0
