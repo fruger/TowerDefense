@@ -22,11 +22,18 @@ namespace TowerDefense
             Instance = this;
         }
 
+        public void TowerBuild(TowerController towerPrefab)
+        {
+            CurrentTower = null;
+            towerPrefab.OnTowerBuild.RemoveListener(TowerBuild);
+        }
+
         public void TrySpawnTowerPrefab(TowerController towerPrefab)
         {
             IsCurrentTowerNull();
             CurrentTower = Instantiate(towerPrefab);
             TowerPrefabCollection.Add(CurrentTower);
+            CurrentTower.OnTowerBuild.AddListener(TowerBuild);
         }
 
         private void IsCurrentTowerNull()
