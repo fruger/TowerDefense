@@ -1,3 +1,4 @@
+using College;
 using UnityEngine;
 
 namespace TowerDefense
@@ -16,18 +17,23 @@ namespace TowerDefense
         [field: SerializeField]
         private LayerMask BuildGroundLayerMask { get; set; }
 
-        [field:SerializeField]
+        [field: SerializeField]
         public TowerAttackData AttackData { get; set; }
+
+        [field: SerializeField]
+        public OnTowerBuildEvent OnTowerBuild { get; set; }
 
         private Camera MainCamera { get; set; }
         private bool IsOnBuildGround { get; set; }
         private bool IsColliding { get; set; }
         public Collider[] CachedHits { get; set; }
         public float TimeSinceLastShot { get; private set; }
+        public bool IsPlaced { get; set; }
 
         private void Awake()
         {
             MainCamera = Camera.main;
+            IsPlaced = false;
         }
 
         private void Update()
@@ -36,21 +42,35 @@ namespace TowerDefense
 
             TowerPosition();
             CheckIfCanBePlaced();
+            PlaceTower();
 
             //TryTakeShot();
         }
 
         private void TowerPosition()
         {
-            Ray vRay = MainCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(vRay, out RaycastHit vHit, MaxRaycastDistance, FloorLayerMask) == true)
+            if (IsPlaced == false)
             {
-                transform.position = new Vector3(vHit.point.x, 0.0f, vHit.point.z);
+                Ray vRay = MainCamera.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(vRay, out RaycastHit vHit, MaxRaycastDistance, FloorLayerMask) == true)
+                {
+                    transform.position = new Vector3(vHit.point.x, 0.0f, vHit.point.z);
+                }
+
+                IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
+                Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
             }
 
-            IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
-            Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
+        }
+
+        private void PlaceTower()
+        {
+            if (Input.GetMouseButton(0) && CheckIfCanBePlaced())
+            {
+                IsPlaced = true;
+                OnTowerBuild.Invoke(this);
+            }
         }
 
         public bool CheckIfCanBePlaced()
