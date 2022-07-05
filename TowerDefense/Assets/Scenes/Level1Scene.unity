@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 339184957}
   - component: {fileID: 339184956}
   m_Layer: 5
-  m_Name: SpawnTower2_Button
+  m_Name: SpawnArcherTower_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -672,7 +672,7 @@ GameObject:
   - component: {fileID: 1245606951}
   - component: {fileID: 1245606954}
   m_Layer: 5
-  m_Name: SpawnTower1_Button
+  m_Name: SpawnWizardTower_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
