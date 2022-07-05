@@ -1187,7 +1187,12 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8937313305612280535, guid: 8286de3c0b9f98447a30ff7894be3d69, type: 3}
+    - {fileID: 1929259206993535435, guid: 8286de3c0b9f98447a30ff7894be3d69, type: 3}
+    - {fileID: 4222075863583716451, guid: 8286de3c0b9f98447a30ff7894be3d69, type: 3}
+    - {fileID: 1859156002675122127, guid: 8286de3c0b9f98447a30ff7894be3d69, type: 3}
+    - {fileID: 8231985209457799262, guid: 8286de3c0b9f98447a30ff7894be3d69, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8286de3c0b9f98447a30ff7894be3d69, type: 3}
 --- !u!4 &8105833289422375268 stripped
 Transform:
@@ -1495,7 +1500,19 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5055465104637071034, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 4969058875821178970, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 1449673693054709966, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 878509886998905565, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 1167770565580296824, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 3733178912689053452, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 7674902756579535235, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 2404758858732815944, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 2398038909831803289, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 6618179725789252867, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 2829577528311671518, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
+    - {fileID: 3984167255582964925, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 103679540b027744e8b9b02fc91b23e9, type: 3}
 --- !u!4 &2262403459266419203 stripped
 Transform:
@@ -28144,7 +28161,14 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7090256189922889486, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
+    - {fileID: 6969492438939992558, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
+    - {fileID: 3482265755001155962, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
+    - {fileID: 2917242789582717801, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
+    - {fileID: 3781328164799304652, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
+    - {fileID: 1694429585612447416, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
+    - {fileID: 5678902442193725495, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 222ac2f8543816d49959dd27e6c4c557, type: 3}
 --- !u!4 &6208926372430019568 stripped
 Transform:
