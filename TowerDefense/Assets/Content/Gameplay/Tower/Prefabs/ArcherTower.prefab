@@ -37,6 +37,7 @@ Transform:
   - {fileID: 3320027703996973185}
   - {fileID: 6575625961042526615}
   - {fileID: 2508760953915200698}
+  - {fileID: 4172868105832325249}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -55,7 +56,7 @@ MonoBehaviour:
   <MaxRaycastDistance>k__BackingField: 2000
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   <FloorLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 128
@@ -63,6 +64,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   <AttackData>k__BackingField: {fileID: 11400000, guid: ab0b0a40f1d619e4ebb1316e616ebdae, type: 2}
+  <ProjectileParent>k__BackingField: {fileID: 4172868105832325249}
+  <OnTowerBuild>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &826129913679972220
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,6 +98,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &8028022882462104636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4172868105832325249}
+  m_Layer: 0
+  m_Name: ProjectileParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4172868105832325249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028022882462104636}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 30.51, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6942024353087789964}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2508760953915110584
 PrefabInstance:
   m_ObjectHideFlags: 0
