@@ -21,6 +21,9 @@ namespace TowerDefense
         public TowerAttackData AttackData { get; set; }
 
         [field: SerializeField]
+        public Transform ProjectileParent { get; private set; }
+
+        [field: SerializeField]
         public OnTowerBuildEvent OnTowerBuild { get; set; }
 
         private Camera MainCamera { get; set; }
@@ -29,6 +32,7 @@ namespace TowerDefense
         public Collider[] CachedHits { get; set; }
         public float TimeSinceLastShot { get; private set; }
         public bool IsPlaced { get; set; }
+        
 
         private void Awake()
         {
@@ -44,7 +48,9 @@ namespace TowerDefense
             CheckIfCanBePlaced();
             PlaceTower();
 
-            //TryTakeShot();
+            TryTakeShot();
+
+            Debug.Log("Working");
         }
 
         private void TowerPosition()
@@ -94,15 +100,15 @@ namespace TowerDefense
 
             if (size > 0)
             {
-                //Projectile projectile = Instantiate(AttackData.ProjectilePrefab, ProjectileParent);
+                Projectile projectile = Instantiate(AttackData.ProjectilePrefab, ProjectileParent);
 
                 IHitable enemyTarget = CachedHits[0].GetComponent<IHitable>();
 
-                /*if (enemyTarget != null)
+                if (enemyTarget != null)
                 {
                     projectile.LaunchAtTarget(enemyTarget, CachedHits[0].transform, AttackData.Damage);
                     TimeSinceLastShot = 0.0f;
-                }*/
+                }
             }
         }
     }
