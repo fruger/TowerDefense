@@ -11,11 +11,16 @@ namespace TowerDefense
         [field: SerializeField]
         private NavMeshAgent Agent { get; set; }
 
-        [field:SerializeField]
+        [field: SerializeField]
+        private int Damage { get; set; }
+
+        [field: SerializeField]
         public OnEnemyDestroyEvent OnEnemyDestroy { get; private set; }
 
         [field: SerializeField]
         public int CurrentHealth { get; private set; }
+
+
 
         public void Initialize(Vector3 targetPosition)
         {
@@ -24,12 +29,17 @@ namespace TowerDefense
 
         private void OnTriggerEnter(Collider other)
         {
-                
-            if (CastleLayerMask.CheckIfContainsLayer(other.gameObject.layer)==true)
+
+            if (CastleLayerMask.CheckIfContainsLayer(other.gameObject.layer) == true)
             {
-                //GameManager.Instance.TakeDamage(Damage);
-                Destroy(gameObject);
+                EnterCastle();
             }
+        }
+
+        private void EnterCastle()
+        {
+            GameManager.Instance.TakeDamage(Damage);
+            Destroy(gameObject);
         }
 
         public void TakeDamage(int damage)
@@ -46,6 +56,6 @@ namespace TowerDefense
             OnEnemyDestroy.Invoke(this);
         }
 
-        
+
     }
 }
