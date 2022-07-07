@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 0
-  <AttackRadius>k__BackingField: 0
-  <FireRate>k__BackingField: 0
-  <Damage>k__BackingField: 0
+    m_Bits: 512
+  <AttackRadius>k__BackingField: 100
+  <FireRate>k__BackingField: 5
+  <Damage>k__BackingField: 3
+  <ProjectilePrefab>k__BackingField: {fileID: 6265570016409855735, guid: 497a029faf8af154f96e3e9c42a7f32d, type: 3}
