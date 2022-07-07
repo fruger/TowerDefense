@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TowerDefense
@@ -17,7 +15,7 @@ namespace TowerDefense
         [field: SerializeField]
         public int Damage { get; set; }
 
-        //[field:SerializeField]
-        //public Projectile ProjectilePrefab { get; set; }
+        [field: SerializeField]
+        public Projectile ProjectilePrefab { get; set; }
     }
 }
