@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TowerDefense
@@ -10,7 +8,15 @@ namespace TowerDefense
 
         protected virtual void Awake()
         {
+            Instance = this as T;
+        }
 
+        protected virtual void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                Instance = null;
+            }
         }
     }
 }
