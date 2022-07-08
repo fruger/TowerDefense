@@ -33,17 +33,6 @@ namespace TowerDefense
             Debug.Log($"{amount} coins gained! You have {CurrentCoins} coins left");
         }
 
-        public bool TryBuyTower(TowerController tower)
-        {
-            // if (CurrentCoins >= tower.Cost)
-            // {
-            //     SpendCoins(tower.Cost);
-            //     return true;
-            // }
-
-            return true;
-        }
-
         protected override void Awake()
         {
             base.Awake();
