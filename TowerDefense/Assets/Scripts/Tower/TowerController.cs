@@ -32,7 +32,7 @@ namespace TowerDefense
         public Collider[] CachedHits { get; set; }
         public float TimeSinceLastShot { get; private set; }
         public bool IsPlaced { get; set; }
-        
+
 
         private void Awake()
         {
@@ -49,8 +49,6 @@ namespace TowerDefense
             PlaceTower();
 
             TryTakeShot();
-
-            Debug.Log("Working");
         }
 
         private void TowerPosition()
