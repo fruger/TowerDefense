@@ -25,7 +25,7 @@ namespace TowerDefense
             Agent.SetDestination(targetPosition);
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected virtual void OnTriggerEnter(Collider other)
         {
             if (CastleLayerMask.CheckIfContainsLayer(other.gameObject.layer) == true)
             {
