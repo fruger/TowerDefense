@@ -26,21 +26,20 @@ namespace TowerDefense
         [field: SerializeField]
         public OnTowerBuildEvent OnTowerBuild { get; set; }
 
-        private Camera MainCamera { get; set; }
-        private bool IsOnBuildGround { get; set; }
-        private bool IsColliding { get; set; }
         public Collider[] CachedHits { get; set; }
         public float TimeSinceLastShot { get; private set; }
         public bool IsPlaced { get; set; }
+        private Camera MainCamera { get; set; }
+        private bool IsOnBuildGround { get; set; }
+        private bool IsColliding { get; set; }
 
-
-        private void Awake()
+        protected virtual void Awake()
         {
             MainCamera = Camera.main;
             IsPlaced = false;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             TimeSinceLastShot += Time.deltaTime;
 
@@ -63,7 +62,7 @@ namespace TowerDefense
                 }
 
                 IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
-                Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
+                //Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
             }
 
         }
@@ -82,12 +81,12 @@ namespace TowerDefense
             return IsOnBuildGround == true && IsColliding == false;
         }
 
-        private void OnTriggerStay(Collider other)
+        protected virtual void OnTriggerStay(Collider other)
         {
             IsColliding = true;
         }
 
-        private void OnTriggerExit(Collider other)
+        protected virtual void OnTriggerExit(Collider other)
         {
             IsColliding = false;
         }
