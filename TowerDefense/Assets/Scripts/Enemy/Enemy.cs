@@ -6,6 +6,12 @@ namespace TowerDefense
     public class Enemy : MonoBehaviour, IHitable
     {
         [field: SerializeField]
+        public OnEnemyDestroyEvent OnEnemyDestroy { get; private set; }
+
+        [field: SerializeField]
+        public int CurrentHealth { get; private set; }
+
+        [field: SerializeField]
         private LayerMask CastleLayerMask { get; set; }
 
         [field: SerializeField]
@@ -14,14 +20,6 @@ namespace TowerDefense
         [field: SerializeField]
         private int Damage { get; set; }
 
-        [field: SerializeField]
-        public OnEnemyDestroyEvent OnEnemyDestroy { get; private set; }
-
-        [field: SerializeField]
-        public int CurrentHealth { get; private set; }
-
-
-
         public void Initialize(Vector3 targetPosition)
         {
             Agent.SetDestination(targetPosition);
@@ -29,7 +27,6 @@ namespace TowerDefense
 
         private void OnTriggerEnter(Collider other)
         {
-
             if (CastleLayerMask.CheckIfContainsLayer(other.gameObject.layer) == true)
             {
                 EnterCastle();
@@ -55,7 +52,5 @@ namespace TowerDefense
         {
             OnEnemyDestroy.Invoke(this);
         }
-
-
     }
 }
