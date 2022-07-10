@@ -16,13 +16,13 @@ namespace TowerDefense
         [field: SerializeField]
         private List<Enemy> EnemyPrefabCollection { get; set; } = new List<Enemy>();
 
+        [field: SerializeField]
+        private KeyCode SpawnEnemyKey { get; set; } = KeyCode.K;
+
+        [field: SerializeField]
+        private KeyCode DestroyEnemyKey { get; set; } = KeyCode.L;
+
         private List<Enemy> EnemySpawnedCollection { get; set; } = new List<Enemy>();
-
-        [field: SerializeField]
-        public KeyCode SpawnEnemyKey { get; set; } = KeyCode.K;
-
-        [field: SerializeField]
-        public KeyCode DestroyEnemyKey { get; set; } = KeyCode.L;
 
         protected virtual void Start()
         {
