@@ -12,6 +12,9 @@ namespace TowerDefense
         public int CurrentHealth { get; private set; }
 
         [field: SerializeField]
+        public Transform Target { get; set; }
+
+        [field: SerializeField]
         private LayerMask CastleLayerMask { get; set; }
 
         [field: SerializeField]
