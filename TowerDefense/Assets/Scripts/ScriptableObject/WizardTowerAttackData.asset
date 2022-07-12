@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78181e1ec658c6d4684c57cc99071fd8, type: 3}
-  m_Name: TowerAttackData
+  m_Name: WizardTowerAttackData
   m_EditorClassIdentifier: 
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 512
   <AttackRadius>k__BackingField: 100
-  <FireRate>k__BackingField: 5
+  <FireRate>k__BackingField: 2
   <Damage>k__BackingField: 3
-  <ProjectilePrefab>k__BackingField: {fileID: 6265570016409855735, guid: 497a029faf8af154f96e3e9c42a7f32d, type: 3}
+  <ProjectilePrefab>k__BackingField: {fileID: -2612650114224023405, guid: 3bb88467a21add34e9831eebda1fc1e9, type: 3}
