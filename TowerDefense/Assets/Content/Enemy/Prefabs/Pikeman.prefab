@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5641895880447041768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6842162709800393939}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6842162709800393939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5641895880447041768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5786994487195239545}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5786994487195385239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +364,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: eb79e3fd0dd669f40a90a984b92a0ccf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f6b0c88789bc024189afa8e609cf122, type: 3}
+--- !u!4 &5786994487195239545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 408046, guid: 8f6b0c88789bc024189afa8e609cf122, type: 3}
+  m_PrefabInstance: {fileID: 5786994487195385239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5786994487195268853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 412514, guid: 8f6b0c88789bc024189afa8e609cf122, type: 3}
@@ -391,13 +427,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d1e65a71f272249aaee411e4683adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <OnEnemyDestroy>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <CurrentHealth>k__BackingField: 100
+  <Target>k__BackingField: {fileID: 6842162709800393939}
   <CastleLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 256
   <Agent>k__BackingField: {fileID: -1780584740126509903}
-  <OnEnemyDestroy>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
+  <Damage>k__BackingField: 7
 --- !u!1001 &6673871631316109871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,5 +512,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64489357934993612, guid: 316022a1c585a7b45b3cc2f855960c93, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 316022a1c585a7b45b3cc2f855960c93, type: 3}
