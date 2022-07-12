@@ -6,19 +6,13 @@ namespace TowerDefense
     public class TowerController : MonoBehaviour
     {
         [field: SerializeField]
-        private float MaxRaycastDistance { get; set; }
-
-        [field: SerializeField]
         public LayerMask EnemyLayerMask { get; set; }
 
         [field: SerializeField]
-        private LayerMask FloorLayerMask { get; set; }
-
-        [field: SerializeField]
-        private LayerMask BuildGroundLayerMask { get; set; }
-
-        [field: SerializeField]
         public TowerAttackData AttackData { get; set; }
+
+        [field: SerializeField]
+        public TowerPlacementData PlacementData { get; set; }
 
         [field: SerializeField]
         public Transform ProjectileParent { get; private set; }
@@ -26,7 +20,7 @@ namespace TowerDefense
         [field: SerializeField]
         public OnTowerBuildEvent OnTowerBuild { get; set; }
 
-        public Collider[] CachedHits { get; set; }
+        public Collider[] CachedHits { get; set; } = new Collider[1];
         public float TimeSinceLastShot { get; private set; }
         public bool IsPlaced { get; set; }
         private Camera MainCamera { get; set; }
@@ -47,7 +41,10 @@ namespace TowerDefense
             CheckIfCanBePlaced();
             PlaceTower();
 
-            TryTakeShot();
+            if (TimeSinceLastShot >= AttackData.FireRate)
+            {
+                TryTakeShot();
+            }
         }
 
         private void TowerPosition()
@@ -56,12 +53,12 @@ namespace TowerDefense
             {
                 Ray vRay = MainCamera.ScreenPointToRay(Input.mousePosition);
 
-                if (Physics.Raycast(vRay, out RaycastHit vHit, MaxRaycastDistance, FloorLayerMask) == true)
+                if (Physics.Raycast(vRay, out RaycastHit vHit, PlacementData.MaxRaycastDistance, PlacementData.FloorLayerMask) == true)
                 {
                     transform.position = new Vector3(vHit.point.x, 0.0f, vHit.point.z);
                 }
 
-                IsOnBuildGround = Physics.Raycast(vRay, MaxRaycastDistance, BuildGroundLayerMask);
+                IsOnBuildGround = Physics.Raycast(vRay, PlacementData.MaxRaycastDistance, PlacementData.BuildGroundLayerMask);
                 //Debug.Log(IsOnBuildGround == true ? "Can be placed" : "Cannot Be Placed");
             }
 
@@ -93,17 +90,23 @@ namespace TowerDefense
 
         private void TryTakeShot()
         {
+            if (IsPlaced == false)
+            {
+                return;
+            }
+
             int size = Physics.OverlapSphereNonAlloc(transform.position, AttackData.AttackRadius, CachedHits, AttackData.EnemyLayerMask);
+            TimeSinceLastShot = 0;
 
             if (size > 0)
             {
                 Projectile projectile = Instantiate(AttackData.ProjectilePrefab, ProjectileParent);
 
-                IHitable enemyTarget = CachedHits[0].GetComponent<IHitable>();
+                Enemy enemyTarget = CachedHits[0].GetComponent<Enemy>();
 
                 if (enemyTarget != null)
                 {
-                    projectile.LaunchAtTarget(enemyTarget, CachedHits[0].transform, AttackData.Damage);
+                    projectile.LaunchAtTarget(enemyTarget.Target, AttackData.Damage);
                     TimeSinceLastShot = 0.0f;
                 }
             }
