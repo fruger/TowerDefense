@@ -4,14 +4,12 @@ namespace TowerDefense
 {
     public class Projectile : MonoBehaviour
     {
-        [field:SerializeField]
-        public int Damage { get; set; }
-
-        [field: SerializeField]
-        public Transform Target { get; set; }
-
         [field: SerializeField]
         public float Speed { get; private set; }
+
+        public int Damage { get; private set; }
+        public Transform Target { get; private set; }
+        private bool IsColliding { get; set; }
 
         public void Update()
         {
@@ -19,10 +17,18 @@ namespace TowerDefense
             transform.position += Time.deltaTime * Speed * transform.forward;
         }
 
-        public void LaunchAtTarget(IHitable enemyTarget, Transform targetTransform, int damage)
+        public void LaunchAtTarget(Transform targetTransform, int damage)
         {
             Damage = damage;
             Target = targetTransform;
+        }
+
+        protected virtual void OnTriggerEnter(Collider other)
+        {
+            if (IsColliding == true)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
