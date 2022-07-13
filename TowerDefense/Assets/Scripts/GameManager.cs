@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace TowerDefense
@@ -16,6 +17,9 @@ namespace TowerDefense
         [field: SerializeField]
         private float MaxHealth { get; set; }
 
+        public event Action OnGameStart = delegate { };
+
+        public event Action OnGameEnd = delegate { };
 
         public void TakeDamage(int damageValue)
         {
@@ -33,12 +37,27 @@ namespace TowerDefense
             Debug.Log($"{amount} coins gained! You have {CurrentCoins} coins left");
         }
 
+        public void NotifyOnGameStart()
+        {
+            OnGameStart();
+        }
+
+        public void NotifyOnGameEnd()
+        {
+            OnGameEnd();
+        }
+
         protected override void Awake()
         {
             base.Awake();
 
             CurrentHealth = MaxHealth;
             CurrentCoins = MaxCoins;
+        }
+
+        protected virtual void Start()
+        {
+            NotifyOnGameStart();
         }
 
         private void SpendCoins(int amount)
@@ -50,6 +69,7 @@ namespace TowerDefense
         private void OnGameLost()
         {
             Debug.Log("You have lost");
+            NotifyOnGameEnd();
         }
     }
 }
