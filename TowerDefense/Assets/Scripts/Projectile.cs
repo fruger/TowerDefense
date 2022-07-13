@@ -9,7 +9,7 @@ namespace TowerDefense
 
         public int Damage { get; private set; }
         public Transform Target { get; private set; }
-        private bool IsColliding { get; set; }
+
 
         public void Update()
         {
@@ -24,11 +24,8 @@ namespace TowerDefense
         }
 
         protected virtual void OnTriggerEnter(Collider other)
-        {
-            if (IsColliding == true)
-            {
-                Destroy(gameObject);
-            }
+        {   
+            Destroy(gameObject);
         }
     }
 }
