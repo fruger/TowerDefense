@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ namespace TowerDefense
 
         private void SpawnEnemy()
         {
-            int prefabIndex = Random.Range(0, EnemyPrefabCollection.Count);
+            int prefabIndex = UnityEngine.Random.Range(0, EnemyPrefabCollection.Count);
 
             Enemy spawnedEnemy = Instantiate(EnemyPrefabCollection[prefabIndex], SpawnPoint.position, SpawnPoint.rotation, SpawnPoint);
             spawnedEnemy.Initialize(EndPoint.position);
@@ -73,5 +74,32 @@ namespace TowerDefense
                 DestroySpawnedEnemies();
             }
         }
-    }
+
+        private void OnEnable()
+        {
+            if(GameManager.Instance != null)
+            {
+                GameManager.Instance.OnGameStart += HandleGameStart;
+                GameManager.Instance.OnGameEnd += HandleGameEnd;
+            }
+        } 
+        private void OnDisable()
+        {
+            if(GameManager.Instance != null)
+            {
+                GameManager.Instance.OnGameStart -= HandleGameStart;
+                GameManager.Instance.OnGameEnd -= HandleGameEnd;
+            }
+        }
+
+        private void HandleGameStart()
+        {
+
+        }
+
+        private void HandleGameEnd()
+        {
+            
+        }
+    } 
 }
