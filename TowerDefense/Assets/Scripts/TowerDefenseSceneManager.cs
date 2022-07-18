@@ -6,17 +6,9 @@ namespace TowerDefense
 {
     public class TowerDefenseSceneManager : SingletonMonoBehaviour<TowerDefenseSceneManager>
     {
-        [field:SerializeField]
-        private string SceneName { get; set; }
-
-        public void LoadSceneSingle(string sceneName)
+        public void PlayGame()
         {
-            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-        }
-
-        public void LoadSceneAdditive(string sceneName)
-        {
-            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
